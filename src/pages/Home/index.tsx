@@ -1,6 +1,7 @@
 import React from 'react';
 import { 
-  TextInput, 
+  TextInput,
+  FlatList,
   Platform, 
   Text, 
   TouchableOpacity,
@@ -47,12 +48,22 @@ export const Home = () => /*:React.JSX.Element*/ {
         <Text style={styles.titleTasks}>Minhas Tarefas</Text>
 
         
-
-        {tasks.map(task => (
+        <FlatList
+          data={tasks}
+          keyExtractor={item => item.id}
+          renderItem={({item}) =>(
+            <TouchableOpacity style={styles.buttonTask}>
+              <Text style={styles.titleTask}>{item.title}</Text>
+            </TouchableOpacity>
+          )}
+        />
+        {/* {tasks.map(task => (
           <TouchableOpacity key={task.id} style={styles.buttonTask}>
             <Text style={styles.titleTask}>{task.title}</Text>
           </TouchableOpacity>
-        ))}
+        ))} */}
+        
+        
       </View>
     </SafeAreaView>
     )
