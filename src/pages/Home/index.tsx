@@ -11,11 +11,14 @@ import {
 
 
 export const Home = () => /*:React.JSX.Element*/ {
+  const [ newTask, setNewTask ] = React.useState('')
+
   return (      
     <SafeAreaView style={styles.safeArea}>
       <View style={styles.container}>
         <Text style={styles.title}>Fala dev!</Text>
         <TextInput
+          onChangeText={setNewTask}
           placeholderTextColor='#555'
           placeholder='Nova tarefa ... ' 
           style={styles.input}
@@ -25,6 +28,8 @@ export const Home = () => /*:React.JSX.Element*/ {
         </TouchableOpacity>
 
         <Text style={styles.titleTasks}>Minhas Tarefas</Text>
+
+        <Text style={{color: '#fff'}}>{newTask}</Text>
       </View>
     </SafeAreaView>
     )
