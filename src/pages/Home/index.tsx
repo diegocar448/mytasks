@@ -1,5 +1,5 @@
 import React from 'react';
-import { Text, View, StyleSheet, SafeAreaView } from 'react-native';
+import { TextInput, Platform, Text, View, StyleSheet, SafeAreaView, } from 'react-native';
 
 
 export const Home = () => /*:React.JSX.Element*/ {
@@ -7,6 +7,7 @@ export const Home = () => /*:React.JSX.Element*/ {
     <SafeAreaView style={styles.safeArea}>
       <View style={styles.container}>
         <Text style={styles.title}>Fala dev!</Text>
+        <TextInput style={styles.input}/>
       </View>
     </SafeAreaView>
     )
@@ -27,5 +28,13 @@ const styles = StyleSheet.create({
     color: '#f1f1f1',
     fontSize:24,
     fontWeight:'bold',
+  },
+  input:{
+    backgroundColor:'#29292e',
+    color: '#f1f1f1',
+    fontSize:18,
+    padding:Platform.OS === 'ios' ? 15 : 12,
+    marginTop:30,
+    borderRadius:7,
   }
 });
