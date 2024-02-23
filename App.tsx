@@ -1,14 +1,15 @@
 
 import React from 'react';
 import { Home } from './src/pages/Home';
-import { TasksContext } from './src/context/TasksContext';
+import { TasksProvider } from './src/context/TasksContext';
+
 
 
 const App = () => /*:React.JSX.Element*/ {
   return (      
-      <TasksContext.Provider value={{ id: '1', title: 'Task01' }}>
+      <TasksProvider>
         <Home />  
-      </TasksContext.Provider>
+      </TasksProvider>
           
     )
 };
