@@ -9,6 +9,7 @@ import {
   StyleSheet,
   SafeAreaView, 
 } from 'react-native';
+import { TaskList } from '../../components/TaskList';
 
 interface Task{
   id: string;
@@ -47,8 +48,10 @@ export const Home = () => /*:React.JSX.Element*/ {
 
         <Text style={styles.titleTasks}>Minhas Tarefas</Text>
 
+        <TaskList tasks={tasks}/>
+
         
-        <FlatList
+        {/* <FlatList
           data={tasks}
           keyExtractor={item => item.id}
           renderItem={({item}) =>(
@@ -56,7 +59,7 @@ export const Home = () => /*:React.JSX.Element*/ {
               <Text style={styles.titleTask}>{item.title}</Text>
             </TouchableOpacity>
           )}
-        />
+        /> */}
         {/* {tasks.map(task => (
           <TouchableOpacity key={task.id} style={styles.buttonTask}>
             <Text style={styles.titleTask}>{task.title}</Text>
