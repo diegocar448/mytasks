@@ -5,7 +5,7 @@ import {
   Text,
   TouchableOpacity
 } from 'react-native';
-import { ITask, TasksContext } from '../../context/TasksContext';
+import { ITask, TasksContext, useTaskList } from '../../context/TasksContext';
 
 interface Task{
   id: string;
@@ -13,7 +13,7 @@ interface Task{
 }
 
 export const TaskList = () => {
-  const {tasks} = React.useContext(TasksContext);
+  const {tasks} = useTaskList();
   
   return (
     <FlatList

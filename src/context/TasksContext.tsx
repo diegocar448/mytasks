@@ -55,3 +55,15 @@ export const TasksProvider: React.FunctionComponent<IProps> = ({children}) => {
     </TasksContext.Provider>
   );
 }
+
+
+// Esse só pode existir em um componente que esteja dentro do TasksProvider
+export function useTaskList(): ITasksContext{
+  const context =  React.useContext(TasksContext);
+
+  if (!context) {
+    throw new Error('useTaskList deve ser usado em uma TasksProvider');    
+  }
+
+  return context;
+}
