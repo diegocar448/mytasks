@@ -22,8 +22,9 @@ export const Home = () => {
     const data ={
       id: (new Date().getTime()),
       title: newTask ? newTask : 'Task empty',
-    }
-    addTask();
+    };
+
+    addTask(data);
   };
 
   return (      
