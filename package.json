@@ -5,7 +5,7 @@
   "scripts": {
     "android": "react-native run-android",
     "ios": "react-native run-ios",
-    "lint": "eslint .",
+    "lint": "eslint . --ext .js, .jsx, .ts, .tsx ",
     "start": "react-native start",
     "test": "jest"
   },
@@ -23,6 +23,8 @@
     "@react-native/eslint-config": "0.73.2",
     "@react-native/metro-config": "0.73.5",
     "@react-native/typescript-config": "0.73.1",
+    "@testing-library/jest-native": "^5.4.3",
+    "@testing-library/react-native": "^12.4.3",
     "@types/react": "^18.2.6",
     "@types/react-test-renderer": "^18.0.0",
     "@typescript-eslint/eslint-plugin-tslint": "^7.0.2",
@@ -39,5 +41,17 @@
   },
   "engines": {
     "node": ">=18"
+  },
+  "jest":{
+    "preset":"react-native",
+    "setupFilesAfterEnv":["@testing-library/jest-native/extend-expect"],
+    "moduleFileExtensions":[
+      "ts",
+      "tsx",
+      "js",
+      "jsx",
+      "json",
+      "node"
+    ]
   }
 }
