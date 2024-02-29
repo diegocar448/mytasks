@@ -28,6 +28,9 @@ export const TasksProvider: React.FunctionComponent<IProps> = ({children}) => {
 
   React.useEffect(() => {
     async function loadTasks() {
+
+      //console.table(['AAAAAAAAA', tasksData, 'BBBBBBBBBB'])
+      //const taskList = await AsyncStorage.getItem(tasksData);
       const taskList = await AsyncStorage.getItem(tasksData);
 
       if (taskList) {
