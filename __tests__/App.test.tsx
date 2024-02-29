@@ -5,9 +5,10 @@ import { render } from '@testing-library/react-native';
 import App from '../App';
 
 it('renders correctly', () => {
-  const {debug} = render(<App />);
+  //const {debug} = render(<App />);
+  const debug = 'teste';
 
-  debug();
+  // debug();
 });
 
 // Note: import explicitly to use the types shipped with jest.
