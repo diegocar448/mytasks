@@ -34,7 +34,7 @@ export const Home = () => {
         <TextInput
           onChangeText={setNewTask}
           placeholderTextColor='#555'
-          placeholder='Nova tarefa ... ' 
+          placeholder='Nova tarefa ...' 
           style={styles.input}
         />
         <TouchableOpacity 
