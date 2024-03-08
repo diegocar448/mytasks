@@ -10,7 +10,7 @@
     "test": "jest"
   },
   "dependencies": {
-    "@react-native-async-storage/async-storage": "^1.22.2",
+    "@react-native-async-storage/async-storage": "^1.22.3",
     "@typescript-eslint/parser": "^5.62.0",
     "react": "18.2.0",
     "react-native": "0.73.4"
@@ -24,7 +24,9 @@
     "@react-native/metro-config": "0.73.5",
     "@react-native/typescript-config": "0.73.1",
     "@testing-library/jest-native": "^5.4.3",
+    "@testing-library/react-hooks": "^8.0.1",
     "@testing-library/react-native": "^12.4.3",
+    "@types/jest": "^29.5.12",
     "@types/react": "^18.2.6",
     "@types/react-test-renderer": "^18.0.0",
     "@typescript-eslint/eslint-plugin-tslint": "^7.0.2",
@@ -41,5 +43,10 @@
   },
   "engines": {
     "node": ">=18"
+  },
+  "compilerOptions": {
+    "types": [
+      "jest"
+    ]
   }
 }

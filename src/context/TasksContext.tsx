@@ -1,5 +1,9 @@
-import AsyncStorage from '@react-native-async-storage/async-storage';
 import React from 'react';
+import AsyncStorage from '@react-native-async-storage/async-storage';
+import mockAsyncStorage from '../mocks/asyncStorageMock';
+
+
+
 
 interface IProps {
   children:React.ReactElement;
@@ -16,7 +20,7 @@ export interface ITasksContext{
   removeTask(id:string): void;
 }
 
-const tasksData = '@MyTasks:Tasks';
+const tasksData = "@MyTasks:Tasks";
  
 export const TasksContext = React.createContext<ITasksContext>(
   {} as ITasksContext,
@@ -31,10 +35,10 @@ export const TasksProvider: React.FunctionComponent<IProps> = ({children}) => {
 
       //console.table(['AAAAAAAAA', tasksData, 'BBBBBBBBBB'])
       //const taskList = await AsyncStorage.getItem(tasksData);
-      const taskList = await AsyncStorage.getItem(tasksData);
+      const taskList = await AsyncStorage.getItem(tasksData);   
 
-      if (taskList) {
-        setData(JSON.parse(taskList));
+      if (taskList) {        
+        setData(JSON.parse(taskList));        
       }
     }
 
@@ -43,7 +47,7 @@ export const TasksProvider: React.FunctionComponent<IProps> = ({children}) => {
 
   const addTask = async (task: ITask) => {
     try {
-      const newTaskList = [... data, task];
+      const newTaskList = [...data, task];
       setData(newTaskList);
       await AsyncStorage.setItem(tasksData, JSON.stringify(newTaskList));
 
