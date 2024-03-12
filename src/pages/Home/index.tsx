@@ -37,7 +37,8 @@ export const Home = () => {
           placeholder='Nova tarefa ...' 
           style={styles.input}
         />
-        <TouchableOpacity 
+        <TouchableOpacity
+          testID='addButton'
           onPress={handleAddNewTask} 
           activeOpacity={0.7} 
           style={styles.button}>

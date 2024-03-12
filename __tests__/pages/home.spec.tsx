@@ -1,7 +1,7 @@
 
 import React from 'react';
 import {it} from '@jest/globals';
-import { render } from '@testing-library/react-native';
+import { fireEvent, render } from '@testing-library/react-native';
 import { renderHook, act } from '@testing-library/react-hooks'
 
 import { TasksProvider, useTaskList } from '../../src/context/TasksContext'
@@ -17,19 +17,29 @@ describe('Home page', () => {
     expect(inputNewTask.props.placeholder).toBeTruthy();
   });
 
-  // it('verifica a insercao de um item na lista de tarefas', async () => {
-  //   const { result } = renderHook(() => useTaskList(), {
-  //     wrapper: TasksProvider,
-  //   });
-  //   const data = {id:'Task01', title: 'Task01'};
-
-  //   await act(() => result.current.addTask(data));
-
+  it('verifica a insercao de um item na lista de tarefas', async () => {
     
+    // const { getByPlaceholderText, getByTestId } = render(<Home />, {
+    //   wrapper:TasksProvider,
+    // });
+    
+    // const { result } = renderHook( () => useTaskList(), {
+    //   wrapper:TasksProvider,
+    // });
+    
+    // const inputNewTask = getByPlaceholderText('Nova tarefa ...');
+    // const button = getByTestId('addButton');
 
-  //   expect(result.current.tasks).toBeTruthy();    
-  // });
+    // const data = {id:'Task01', title: 'Task01'};
+
+    // act(() => fireEvent.changeText(inputNewTask, data.title));    
+
+    // act(async () => {
+    //   await fireEvent.press(button);
+    // });
+
+    // expect(result.current.tasks).toBeTruthy();
+
+
+  });
 });
-
-
-
